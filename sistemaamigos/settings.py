@@ -27,6 +27,7 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-15(4^2d42%w=4qmro8g(z
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+CSRF_TRUSTED_ORIGINS = config('CSRF_TRUSTED_ORIGINS', default='', cast=Csv())
 
 
 # Application definition
