@@ -92,6 +92,13 @@
     margin-bottom: 0.75rem;
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
+    min-width: 0;
+}
+
+.footer-contact li a {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .footer-contact li i {
@@ -218,5 +225,14 @@
 
     .footer-bottom-item:last-child {
         grid-column: auto;
+    }
+
+    .footer-contact li {
+        align-items: flex-start;
+    }
+
+    .footer-contact li a {
+        display: block;
+        flex: 1 1 auto;
     }
 }

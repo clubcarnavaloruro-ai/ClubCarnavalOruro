@@ -27,7 +27,7 @@ urlpatterns = [
     path('souvenirs/', include(('apps.souvenirs.urls', 'souvenirs'), namespace='souvenirs')),
     path('eventos/', include(('apps.eventos.urls', 'eventos'), namespace='eventos')),
     path('dashboard/', include(('apps.dashboard.urls', 'dashboard'), namespace='dashboard')),
-    path('admin/', admin.site.urls),
+    path('secret-admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

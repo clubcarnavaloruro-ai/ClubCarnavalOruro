@@ -33,7 +33,7 @@ def robots_txt(request):
 		'User-agent: *',
 		'Allow: /',
 		'Disallow: /login/',
-		'Disallow: /admin/',
+		'Disallow: /secret-admin/',
 		'Disallow: /socios/',
 		'Disallow: /solicitudes/',
 		'Disallow: /reportes/',
