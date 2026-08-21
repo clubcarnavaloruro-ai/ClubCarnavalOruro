@@ -2,9 +2,13 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.models import User
+from django.conf import settings
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
+from xml.sax.saxutils import escape
 
 
 def get_home_redirect(user):
@@ -21,6 +25,41 @@ def inicio(request):
 
 def faq(request):
     return render(request, 'core/faq.html')
+
+
+def robots_txt(request):
+	sitemap_url = f'{settings.PUBLIC_SITE_URL}{reverse("core:sitemap")}'
+	content = '\n'.join([
+		'User-agent: *',
+		'Allow: /',
+		'Disallow: /login/',
+		'Disallow: /admin/',
+		'Disallow: /socios/',
+		'Disallow: /solicitudes/',
+		'Disallow: /reportes/',
+		'Disallow: /dashboard/',
+		'Sitemap: ' + sitemap_url,
+		'',
+	])
+	return HttpResponse(content, content_type='text/plain')
+
+
+def sitemap_xml(request):
+	public_urls = [
+		f'{settings.PUBLIC_SITE_URL}{reverse("core:inicio")}',
+		f'{settings.PUBLIC_SITE_URL}{reverse("core:faq")}',
+	]
+	url_entries = ''.join(
+		f'<url><loc>{escape(url)}</loc><changefreq>weekly</changefreq><priority>{priority}</priority></url>'
+		for url, priority in ((public_urls[0], '1.0'), (public_urls[1], '0.7'))
+	)
+	content = (
+		'<?xml version="1.0" encoding="UTF-8"?>'
+		'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+		f'{url_entries}'
+		'</urlset>'
+	)
+	return HttpResponse(content, content_type='application/xml')
 
 
 def iniciar_sesion(request):
