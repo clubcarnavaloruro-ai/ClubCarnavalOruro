@@ -18,10 +18,10 @@
         <div class="navbar-center">
             <ul class="navbar-desktop-links d-none d-lg-flex">
                 <li><a class="nav-link" href="{% url 'core:inicio' %}">Inicio</a></li>
-                <li><a class="nav-link" href="#beneficios">Beneficios</a></li>
-                <li><a class="nav-link" href="#" data-toggle="modal" data-target="#modalInscripcion">Cómo inscribirme</a></li>
+                <li><a class="nav-link" href="{% url 'core:inicio' %}#beneficios">Beneficios</a></li>
+                <li><a class="nav-link" href="{% url 'core:inicio' %}#modalInscripcion">Cómo inscribirme</a></li>
                 <li><a class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
-                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link" href="{% url 'core:inicio' %}#contacto">Contacto</a></li>
             </ul>
         </div>
 
@@ -49,10 +49,10 @@
     </div>
     <ul class="mobile-nav-links">
         <li><a class="nav-link" href="{% url 'core:inicio' %}">Inicio</a></li>
-        <li><a class="nav-link" href="#beneficios">Beneficios</a></li>
-        <li><a class="nav-link" href="#inscripcion" data-toggle="modal" data-target="#modalInscripcion">Quiero inscribirme</a></li>
+        <li><a class="nav-link" href="{% url 'core:inicio' %}#beneficios">Beneficios</a></li>
+        <li><a class="nav-link" href="{% url 'core:inicio' %}#modalInscripcion">Quiero inscribirme</a></li>
         <li><a class="nav-link" href="{% url 'core:faq' %}">FAQ</a></li>
-        <li><a class="nav-link" href="#contacto">Contacto</a></li>
+        <li><a class="nav-link" href="{% url 'core:inicio' %}#contacto">Contacto</a></li>
     </ul>
 </div>
 {% endif %}

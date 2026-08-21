@@ -99,7 +99,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td><span class="codigo-socio-badge">{{ socio.codigo_socio|default:'-' }}</span></td>
-                        <td>{{ socio.nombre }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno }}{% endif %}</td>
+                        <td>{{ socio.nombre|upper }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno|upper }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno|upper }}{% endif %}</td>
                         <td>{{ socio.email }}</td>
                         <td>{% if socio.carnet_ci %}{{ socio.carnet_ci }}{% if socio.carnet_complemento %}{{ socio.carnet_complemento }}{% endif %}{% else %}-{% endif %}</td>
                         <td>{{ socio.ciudad|default:'-' }}</td>

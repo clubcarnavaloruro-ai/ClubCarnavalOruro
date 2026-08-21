@@ -33,6 +33,10 @@
 .hero-portada-desc{color:rgba(248,250,252,0.92);max-width:560px}
 .hero-actions{display:flex;gap:0.75rem;align-items:center}
 
+.objetivo-check {
+  color: var(--primary-color) !important;
+}
+
 .hero-actions .hero-btn-glow,
 .modern-inscripcion-modal .modal-actions .btn-primary {
   background: var(--primary-color);

@@ -19,13 +19,13 @@
                     <h4 class="footer-title">Navegación</h4>
                     <ul class="footer-links">
                         <li><a href="{% url 'core:inicio' %}">Inicio</a></li>
-                        <li><a href="#beneficios">Beneficios</a></li>
-                        <li><a href="#inscripcion">Cómo inscribirme</a></li>
+                        <li><a href="{% url 'core:inicio' %}#beneficios">Beneficios</a></li>
+                        <li><a href="{% url 'core:inicio' %}#modalInscripcion">Cómo inscribirme</a></li>
                         <li><a href="{% url 'core:faq' %}">FAQ</a></li>
                     </ul>
                 </section>
 
-                <section class="footer-section">
+                <section class="footer-section" id="contacto">
                     <h4 class="footer-title">Contacto</h4>
                     <ul class="footer-contact">
                         <li><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/59171930074" target="_blank" rel="noopener noreferrer">7193 0074</a></li>

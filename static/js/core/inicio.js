@@ -10,7 +10,22 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeConfirmationModal();
     initializeFormularioAjax();
     initializeImageFallAnimations();
+    initializeHashNavigation();
 });
+
+function initializeHashNavigation() {
+    const openModalFromHash = () => {
+        if (window.location.hash !== '#modalInscripcion') return;
+
+        const modal = document.getElementById('modalInscripcion');
+        if (!modal || typeof $ === 'undefined') return;
+
+        $(modal).modal('show');
+    };
+
+    openModalFromHash();
+    window.addEventListener('hashchange', openModalFromHash);
+}
 
 function initializePaginationAnimations() {
     document.querySelectorAll('.pagination a').forEach(link => {
