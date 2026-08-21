@@ -33,6 +33,35 @@
 .hero-portada-desc{color:rgba(248,250,252,0.92);max-width:560px}
 .hero-actions{display:flex;gap:0.75rem;align-items:center}
 
+.hero-actions .hero-btn-glow,
+.modern-inscripcion-modal .modal-actions .btn-primary {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(109, 13, 13, 0.28);
+}
+
+.hero-actions .hero-btn-glow:hover,
+.hero-actions .hero-btn-glow:focus,
+.modern-inscripcion-modal .modal-actions .btn-primary:hover,
+.modern-inscripcion-modal .modal-actions .btn-primary:focus {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #fff;
+}
+
+.hero-actions .hero-btn-float {
+  border-color: #ff8a80;
+  color: #fff;
+}
+
+.hero-actions .hero-btn-float:hover,
+.hero-actions .hero-btn-float:focus {
+  background: #ff8a80;
+  border-color: #ff8a80;
+  color: #4a0b0b;
+}
+
 /* SOBRE CLUB - subgrid con 3 columnas */
 .sobre-club-subgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem}
 .sobre-club-card {
@@ -183,6 +212,8 @@
 .modern-inscripcion-modal .form-control:focus{border-color:var(--primary-light);box-shadow:0 0 0 0.12rem rgba(59,130,246,0.12)}
 .modern-inscripcion-modal .modal-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.9rem}
 .modern-inscripcion-modal .modal-actions .btn{min-width:120px;border-radius:999px;padding:0.55rem .9rem}
+.modern-inscripcion-modal .modal-actions .btn-outline-secondary{border-color:var(--primary-color);color:var(--primary-color)}
+.modern-inscripcion-modal .modal-actions .btn-outline-secondary:hover{background:var(--primary-color);border-color:var(--primary-color);color:#fff}
 
 @media (max-width:576px){
   .modern-inscripcion-modal .modal-dialog{max-width:95%}

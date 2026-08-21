@@ -25,28 +25,26 @@
 
   <div class="perfil-grid">
     <div class="perfil-card">
-      <div class="perfil-avatar">
-        <div class="avatar-image">
-          {% if user_profile.foto %}
-            <img src="{{ user_profile.foto.url }}" alt="Avatar">
-          {% else %}
-            <div class="avatar-placeholder">Sin foto</div>
-          {% endif %}
-        </div>
-        <div>
-          <h3>{% if socio %}{{ socio.nombre }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno }}{% endif %}{% else %}{{ request.user.get_full_name|default:request.user.username }}{% endif %}</h3>
-          <span>{{ request.user.email }}</span>
-        </div>
-      </div>
-
       <form method="post" action="{% url 'socios:subir_foto' %}" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="perfil-actions">
-          <input type="file" name="foto" accept="image/*">
-          <button class="btn btn-primary" type="submit">Subir foto</button>
+        <div class="perfil-avatar">
+          <div class="avatar-image">
+            {% if user_profile.foto %}
+              <img src="{{ user_profile.foto.url }}" alt="Avatar">
+            {% else %}
+              <div class="avatar-placeholder">Sin foto</div>
+            {% endif %}
+            <input id="perfilFoto" type="file" name="foto" accept="image/*">
+            <label for="perfilFoto" class="perfil-photo-picker" title="Cambiar foto" aria-label="Cambiar foto">
+              <i class="fas fa-camera"></i>
+            </label>
+          </div>
+          <div class="perfil-identity">
+            <h3>{% if socio %}{{ socio.nombre|upper }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno|upper }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno|upper }}{% endif %}{% else %}{{ request.user.get_full_name|default:request.user.username|upper }}{% endif %}</h3>
+            <strong class="perfil-code">Código: {% if socio and socio.codigo_socio %}{{ socio.codigo_socio }}{% else %}-{% endif %}</strong>
+          </div>
         </div>
       </form>
-      <p class="perfil-legend">Sube una imagen clara y profesional para que tu perfil se vea mejor.</p>
     </div>
 
     <div class="perfil-detail-card">
@@ -57,7 +55,7 @@
         </div>
         <div class="info-item">
           <strong>Nombre completo</strong>
-          <span>{% if socio %}{{ socio.nombre }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno }}{% endif %}{% else %}{{ request.user.get_full_name|default:'No disponible' }}{% endif %}</span>
+          <span>{% if socio %}{{ socio.nombre|upper }} {% if socio.apellido_paterno %}{{ socio.apellido_paterno|upper }}{% endif %} {% if socio.apellido_materno %}{{ socio.apellido_materno|upper }}{% endif %}{% else %}{{ request.user.get_full_name|default:'No disponible'|upper }}{% endif %}</span>
         </div>
         <div class="info-item">
           <strong>Correo</strong>
@@ -168,6 +166,13 @@
       }
       var toggles = document.querySelectorAll('.toggle-password');
       toggles.forEach(function(t){ t.addEventListener('click', toggle); });
+
+      var photoInput = document.getElementById('perfilFoto');
+      if (photoInput) {
+        photoInput.addEventListener('change', function(){
+          if (photoInput.files.length) photoInput.form.submit();
+        });
+      }
     });
   </script>
 

@@ -51,14 +51,16 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 1rem;
+    gap: 0.65rem;
 }
 
 .perfil-avatar .avatar-image {
-    width: 140px;
-    height: 140px;
-    border-radius: 1rem;
-    overflow: hidden;
+    position: relative;
+    width: 128px;
+    height: 128px;
+    flex: 0 0 128px;
+    border-radius: 50%;
+    overflow: visible;
     border: 1px solid #e2e8f0;
     background: #f8fafc;
 }
@@ -67,6 +69,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
 }
 
 .perfil-avatar .avatar-placeholder {
@@ -74,6 +77,8 @@
     height: 100%;
     display: grid;
     place-items: center;
+    overflow: hidden;
+    border-radius: 50%;
     color: #64748b;
     font-size: 0.95rem;
     font-weight: 600;
@@ -83,6 +88,21 @@
     margin: 0;
     font-size: 1.15rem;
     font-weight: 700;
+}
+
+.perfil-identity {
+    min-width: 0;
+}
+
+.perfil-identity h3 {
+    overflow-wrap: anywhere;
+}
+
+.perfil-code {
+    display: block;
+    margin-top: 0.3rem;
+    color: #007bff;
+    font-size: 0.9rem;
 }
 
 .perfil-avatar span {
@@ -136,37 +156,46 @@
     color: #0f172a;
 }
 
-.perfil-actions {
+.perfil-photo-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 0.5rem;
     align-items: center;
     margin-top: 1rem;
 }
 
-.perfil-actions input[type='file'] {
-    flex: 1 1 220px;
-    min-width: 0;
-    max-width: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    border: 1px solid #cbd5e1;
-    border-radius: 0.65rem;
-    padding: 0.55rem 0.9rem;
-    background: #ffffff;
+.perfil-avatar .avatar-image input[type='file'] {
+    position: absolute;
+    inset: 0;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
 }
 
-.perfil-actions .btn {
-    flex: 0 0 auto;
-    min-width: 120px;
-    width: auto;
-    height: 42px;
+.perfil-avatar .perfil-photo-picker {
+    position: absolute;
+    right: -10px;
+    bottom: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    color: #ffffff;
+    background: rgba(0, 123, 255, 0.72);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: 0.85rem;
+    cursor: pointer;
+    z-index: 2;
 }
 
-.perfil-legend {
-    margin-top: 1rem;
-    color: #64748b;
-    font-size: 0.92rem;
+.perfil-avatar .perfil-photo-picker:hover {
+    background: rgba(0, 86, 179, 0.88);
 }
 
 .perfil-entregas-card h3 {
@@ -207,12 +236,46 @@
 }
 
 @media (max-width: 640px) {
-    .perfil-actions {
-        flex-direction: column;
-        align-items: stretch;
+    .perfil-card,
+    .perfil-detail-card {
+        padding: 0.8rem;
     }
 
-    .perfil-actions input[type='file'] {
-        width: 100%;
+    .perfil-photo-actions {
+        justify-content: flex-end;
+    }
+
+    .perfil-avatar .avatar-image {
+        width: 132px;
+        height: 132px;
+        flex-basis: 132px;
+    }
+
+    .perfil-avatar .perfil-photo-picker {
+        width: 32px;
+        height: 32px;
+    }
+
+    .perfil-identity h3 {
+        max-width: 100%;
+        font-size: 1.05rem;
+    }
+
+    .perfil-avatar {
+        gap: 0.35rem;
+    }
+
+    .perfil-code {
+        margin-top: 0.15rem;
+        font-size: 0.84rem;
+    }
+
+    .perfil-info {
+        gap: 0.45rem;
+    }
+
+    .perfil-info .info-item {
+        gap: 0.15rem;
+        padding: 0.55rem 0.65rem;
     }
 }

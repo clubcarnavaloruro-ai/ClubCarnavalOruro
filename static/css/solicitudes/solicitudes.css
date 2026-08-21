@@ -3,15 +3,16 @@
 .btn-block { width: 100%; }
 
 .btn-whatsapp {
-    background: #25d366;
-    border-color: #25d366;
+    background: #d32f2f;
+    border-color: #ff8a80;
     color: #fff;
+    box-shadow: 0 6px 14px rgba(109, 13, 13, 0.2);
 }
 
 .btn-whatsapp:hover,
 .btn-whatsapp:focus {
-    background: #128c7e;
-    border-color: #128c7e;
+    background: #8f1111;
+    border-color: #ff8a80;
     color: #fff;
 }
 

@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesion</title>
-    <link rel="icon" href="{% static 'img/logoAlmacen.png' %}" type="image/png">
+    <link rel="icon" href="{% static 'img/LogoCarnavalOruroClub.png' %}" type="image/png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/componentes/navbar-inicio.css' %}">
     <link rel="stylesheet" href="{% static 'css/auth/login.css' %}">
 </head>
 <body class="login-body">
-    <div class="login-bg" aria-hidden="true" style="background-image: url('{% static 'img/logoAlmacen.png' %}');"></div>
+    <div class="login-bg" aria-hidden="true" style="background-image: url('{% static 'img/LogoCarnavalOruroClub.png' %}');"></div>
     <div class="login-bg-overlay" aria-hidden="true"></div>
 
     <nav class="navbar-inicio navbar navbar-expand-lg">
         <div class="container-fluid navbar-inicio-container">
             <div class="navbar-left">
                 <a class="navbar-brand-inicio" href="{% url 'core:inicio' %}">
-                    <img src="{% static 'img/logoAlmacen.png' %}" alt="Club carnaval Oruro" class="navbar-logo">
+                    <img src="{% static 'img/LogoCarnavalOruroClub.png' %}" alt="Club carnaval Oruro" class="navbar-logo">
                     <span class="navbar-brand-text">
-                        <span class="brand-american">CLUB</span> <span class="brand-outlet">AMIGOS</span>
+                        <span class="brand-american">CLUB Carnaval</span> <span class="brand-outlet">ORURO</span>
                     </span>
                 </a>
             </div>
@@ -37,8 +37,8 @@
         <div class="login-wrapper">
             <div class="login-card">
                 <div class="login-card-header">
-                    <span class="login-badge">Club carnaval Amigos</span>
-                    <img class="login-logo" src="{% static 'img/logoAlmacen.png' %}" alt="Club carnaval Oruro" width="64" height="64" onerror="this.style.display='none'">
+                    <span class="login-badge">Club Carnaval Oruro</span>
+                    <img class="login-logo" src="{% static 'img/LogoCarnavalOruroClub.png' %}" alt="Club carnaval Oruro" width="64" height="64" onerror="this.style.display='none'">
                     <h2>Acceso al sistema</h2>
                 </div>
                 <form method="post" autocomplete="on" class="login-form">

@@ -46,6 +46,14 @@
     gap: 0.75rem;
     text-decoration: none;
     flex-shrink: 0;
+    text-decoration: none !important;
+}
+
+.navbar-brand-inicio:hover,
+.navbar-brand-inicio:focus,
+.navbar-brand-inicio::after {
+    text-decoration: none !important;
+    border-bottom: 0 !important;
 }
 
 .navbar-logo {
@@ -92,10 +100,14 @@
     font-weight: 500;
     transition: color 0.3s ease;
     white-space: nowrap;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
 }
 
 .navbar-desktop-links .nav-link:hover {
     color: #ff8a80;
+    text-decoration: none !important;
+    border-bottom: 0 !important;
 }
 
 .nav-search-form-inline {
@@ -322,10 +334,13 @@
     font-weight: 500;
     border-bottom: 1px solid #f3f4f6;
     transition: color 0.3s ease;
+    text-decoration: none !important;
 }
 
 .mobile-nav-links .nav-link:hover {
     color: #dc3545;
+    text-decoration: none !important;
+    border-bottom-color: #f3f4f6;
 }
 
 .mobile-nav-filters {

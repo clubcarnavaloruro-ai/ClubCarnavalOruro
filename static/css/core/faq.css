@@ -59,6 +59,20 @@
     color: rgba(255,255,255,0.75);
 }
 
+.faq-hero-card .btn-primary {
+    background: #d32f2f;
+    border-color: #ff8a80;
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(109, 13, 13, 0.3);
+}
+
+.faq-hero-card .btn-primary:hover,
+.faq-hero-card .btn-primary:focus {
+    background: #ff8a80;
+    border-color: #ff8a80;
+    color: #4a0b0b;
+}
+
 .faq-page {
     max-width: 1200px;
     margin: 0 auto;

@@ -18,11 +18,12 @@ def construir_enlace_whatsapp(solicitud):
     if len(telefono) == 8:
         telefono = f'591{telefono}'
 
-    apellido = solicitud.apellido_paterno or solicitud.apellido
-    nombre_completo = f'{solicitud.nombre} {apellido}'.strip()
+    apellidos = ' '.join(filter(None, [solicitud.apellido_paterno, solicitud.apellido_materno])) or solicitud.apellido
+    nombre_completo = f'{solicitud.nombre} {apellidos}'.strip()
+    nombre_mayusculas = nombre_completo.upper()
     if solicitud.estado == 'rechazada':
         mensaje = (
-            f'Hola {nombre_completo}. Gracias por tu interés en formar parte del Club carnaval Oruro.\n\n'
+            f'Hola *{nombre_mayusculas}*. Gracias por tu interés en formar parte del Club Carnaval Oruro.\n\n'
             'Lamentamos informarte que tu solicitud de ingreso fue rechazada en esta ocasión. '
             'Si deseas recibir más información, puedes responder a este mensaje.\n\n'
             'Saludos cordiales.'
@@ -30,15 +31,17 @@ def construir_enlace_whatsapp(solicitud):
     elif solicitud.usuario_creado:
         contrasena = solicitud.carnet_ci or 'ClubAmigos2026!'
         mensaje = (
-            f'Hola {nombre_completo}, gracias por registrarte para entrar a tu cuenta de Club carnaval Oruro.\n\n'
-            f'Estos son los datos de acceso:\n'
-            f'Usuario: {solicitud.usuario_creado.username}\n'
-            f'Contraseña: {contrasena}\n\n'
-            '¡Te damos la bienvenida al club!'
+            f'¡Bienvenido a Club Carnaval Oruro, *{nombre_mayusculas}*! 🎭🇧🇴\n\n'
+            'Gracias por registrarte. Tu cuenta ha sido creada correctamente.\n\n'
+            'Datos de acceso:\n'
+            f'👤 Usuario: {solicitud.usuario_creado.username}\n'
+            f'🔑 Contraseña: {contrasena}\n\n'
+            'Ya puedes ingresar a tu cuenta y disfrutar de los beneficios de formar parte de Club Carnaval Oruro.\n\n'
+            '¡Gracias por ser parte! 💙💛'
         )
     else:
         mensaje = (
-            f'Hola {nombre_completo}, tu solicitud para formar parte del Club carnaval Oruro fue aprobada. '
+            f'Hola *{nombre_mayusculas}*, tu solicitud para formar parte del Club Carnaval Oruro fue aprobada. '
             'Nos comunicaremos contigo para brindarte los siguientes pasos.\n\n'
             '¡Bienvenido al club!'
         )
