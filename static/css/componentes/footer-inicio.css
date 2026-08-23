@@ -1,6 +1,6 @@
 /* New Footer Design */
 .footer-inicio {
-    background: #6d0d0d;
+    background: #032c2a;
     padding: 3rem 0 1rem;
     color: #ffffff;
 }
@@ -39,7 +39,7 @@
 }
 
 .footer-brand .brand-outlet {
-    color: #ff8a80;
+    color: #76c7bd;
 }
 
 .footer-tagline {
@@ -103,7 +103,7 @@
 
 .footer-contact li i {
     margin-top: 0.2rem;
-    color: #ff8a80;
+    color: #76c7bd;
 }
 
 /* Schedule Section */
@@ -133,7 +133,7 @@
 }
 
 .footer-social .social-link:hover {
-    background: #d32f2f;
+    background: #05413f;
 }
 
 /* Footer Bottom */
@@ -160,7 +160,7 @@
 }
 
 .footer-bottom-link:hover {
-    color: #f8b4b4;
+    color: #76c7bd;
 }
 
 /* Responsive Design */

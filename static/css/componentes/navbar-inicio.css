@@ -1,6 +1,12 @@
 /* New Navbar Design */
+:root {
+    --public-primary: #05413f;
+    --public-dark: #032c2a;
+    --public-light: #76c7bd;
+}
+
 .navbar-inicio {
-    background: #b71c1c;
+    background: var(--public-primary);
     padding: 0.75rem 0;
     position: sticky;
     top: 0;
@@ -37,7 +43,7 @@
 }
 
 .mobile-nav-toggle:hover {
-    color: #ff8a80;
+    color: var(--public-light);
 }
 
 .navbar-brand-inicio {
@@ -57,7 +63,7 @@
 }
 
 .navbar-logo {
-    height: 42px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -72,7 +78,7 @@
 }
 
 .brand-outlet {
-    color: #ff8a80;
+    color: var(--public-light);
 }
 
 .navbar-center {
@@ -105,7 +111,7 @@
 }
 
 .navbar-desktop-links .nav-link:hover {
-    color: #ff8a80;
+    color: var(--public-light);
     text-decoration: none !important;
     border-bottom: 0 !important;
 }
@@ -145,7 +151,7 @@
 }
 
 .nav-icon-btn:hover {
-    color: #ff8a80;
+    color: var(--public-light);
 }
 
 /* Filter Dropdown */
@@ -220,7 +226,7 @@
     }
 
     .navbar-logo {
-        height: 36px;
+        height: 50px;
     }
 
     .navbar-center {
@@ -296,7 +302,7 @@
     align-items: center;
     padding: 1rem;
     border-bottom: 1px solid #e5e7eb;
-    background: #b71c1c;
+    background: var(--public-primary);
 }
 
 .mobile-nav-header .navbar-brand-inicio {
@@ -328,7 +334,7 @@
 .mobile-nav-links .nav-link {
     display: block;
     padding: 0.75rem 0;
-    color: #6d0d0d;
+    color: var(--public-dark);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -338,7 +344,7 @@
 }
 
 .mobile-nav-links .nav-link:hover {
-    color: #d32f2f;
+    color: var(--public-primary);
     text-decoration: none !important;
     border-bottom-color: #f3f4f6;
 }

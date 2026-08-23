@@ -1,5 +1,5 @@
 .faq-hero {
-    background: linear-gradient(135deg, #6d0d0d 0%, #d32f2f 100%);
+    background: linear-gradient(135deg, #032c2a 0%, #05413f 100%);
     padding: 5rem 0 3rem;
     color: #fff;
     position: relative;
@@ -60,17 +60,17 @@
 }
 
 .faq-hero-card .btn-primary {
-    background: #d32f2f;
-    border-color: #ff8a80;
+    background: #05413f;
+    border-color: #76c7bd;
     color: #fff;
-    box-shadow: 0 10px 24px rgba(109, 13, 13, 0.3);
+    box-shadow: 0 10px 24px rgba(3, 44, 42, 0.3);
 }
 
 .faq-hero-card .btn-primary:hover,
 .faq-hero-card .btn-primary:focus {
-    background: #ff8a80;
-    border-color: #ff8a80;
-    color: #4a0b0b;
+    background: #76c7bd;
+    border-color: #76c7bd;
+    color: #032c2a;
 }
 
 .faq-page {
@@ -84,7 +84,7 @@
 }
 
 .faq-item {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #b8d8d4;
     background: #fff;
 }
 
@@ -98,16 +98,16 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem 1.5rem;
-    background: #f8fafc;
+    background: #eff8f6;
     border: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #4a0b0b;
+    color: #123c3a;
     cursor: pointer;
 }
 
 .faq-question i {
-    color: #d32f2f;
+    color: #05413f;
     transition: transform 0.25s ease;
 }
 
@@ -129,7 +129,7 @@
 
 .faq-answer p {
     margin: 0;
-    color: #7f4b4b;
+    color: #52706d;
     line-height: 1.8;
     padding-top: 0.75rem;
 }
@@ -138,19 +138,19 @@
     background: #fff;
     border-radius: 1.25rem;
     padding: 2rem;
-    border: 1px solid #e5e7eb;
+    border: 1px solid #b8d8d4;
     box-shadow: 0 15px 36px rgba(15, 23, 42, 0.08);
 }
 
 .faq-side-card h4 {
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    color: #d32f2f;
+    color: #05413f;
 }
 
 .faq-side-card p {
     margin-bottom: 1.5rem;
-    color: #7f4b4b;
+    color: #52706d;
     line-height: 1.7;
 }
 
@@ -166,17 +166,17 @@
     display: flex;
     align-items: center;
     gap: 0.85rem;
-    color: #7f4b4b;
+    color: #52706d;
 }
 
 .faq-contact-list li a {
-    color: #d32f2f;
+    color: #05413f;
     text-decoration: none;
     font-weight: 600;
 }
 
 .faq-contact-list li i {
-    color: #ff1744;
+    color: #3d9b92;
     min-width: 24px;
     text-align: center;
 }
