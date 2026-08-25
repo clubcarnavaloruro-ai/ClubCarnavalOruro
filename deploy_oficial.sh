@@ -9,7 +9,7 @@ REPO_BRANCH="deployhostinger"
 DB_NAME="club_carnaval_oruro"
 DB_USER="club_carnaval_user"
 DB_PASSWORD="${DB_PASSWORD:?Define DB_PASSWORD en el entorno antes de ejecutar}"
-DOMAIN="187.127.59.36"
+DOMAIN="carnavaldeoruro.club"
 APP_PORT="8001"
 
 echo "=========================================="
@@ -57,6 +57,10 @@ cat > "$PROJECT_DIR/.env" << EOF
 SECRET_KEY=$(python3 -c 'import secrets; print(secrets.token_urlsafe(50))')
 DEBUG=False
 ALLOWED_HOSTS=$DOMAIN,www.$DOMAIN,localhost,127.0.0.1
+PUBLIC_SITE_URL=https://$DOMAIN
+SECURE_SSL_REDIRECT=True
+SESSION_COOKIE_SECURE=True
+CSRF_COOKIE_SECURE=True
 
 # Base de datos PostgreSQL
 DB_NAME=$DB_NAME
@@ -75,7 +79,7 @@ EMAIL_USE_TLS=True
 DEFAULT_FROM_EMAIL=noreply@clubcarnavaloruro.com
 
 # CSRF y Seguridad
-CSRF_TRUSTED_ORIGINS=http://$DOMAIN,http://www.$DOMAIN,http://localhost,http://127.0.0.1
+CSRF_TRUSTED_ORIGINS=https://$DOMAIN,https://www.$DOMAIN,http://$DOMAIN,http://www.$DOMAIN,http://localhost,http://127.0.0.1
 EOF
 
 chmod 600 "$PROJECT_DIR/.env"
