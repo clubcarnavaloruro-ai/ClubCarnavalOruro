@@ -136,6 +136,13 @@
     background: #05413f;
 }
 
+.social-x {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
 /* Footer Bottom */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
